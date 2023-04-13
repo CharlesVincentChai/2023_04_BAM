@@ -6,10 +6,18 @@ public class Main {
 		
 		Scanner sc = new Scanner(System.in);
 		
-//		String cmd = sc.nextLine();
-//		sc.nextInt();
-		String cmd = sc.next();
-		System.out.println(cmd);
+		
+		
+		while(true) {
+			System.out.printf("명령어) ");
+			String cmd = sc.next();
+			
+			if(cmd.equals("exit")){
+				break;
+			}
+		}
+		
+		sc.close();
 		
 		System.out.println("== 프로그램 끝 ==");
 	}
