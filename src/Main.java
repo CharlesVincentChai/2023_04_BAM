@@ -32,11 +32,36 @@ public class Main {
 					String title = articles.get(i).title;
 
 					System.out.printf("%d	|	%s\n", id, title);
+				} 
+			}else if (cmd.startsWith("article detail ")) {
+				
+				String[] cmdBits = cmd.split(" ");
+				
+				int id = Integer.parseInt(cmdBits[2]);
+				
+				
+				Article foundArticle = null;
+				
+				for ( Article article : articles ) {
+					if (article.num ==id) {
+						foundArticle=article;
+						break;
+					}
 				}
-			} else {
-				System.out.println("존재하지 않는 명령어 입니다.");
-			}
+				
+				if (foundArticle == null) {
+					System.out.println("일치하는 번호가 없습니다.");
+				}
+					System.out.printf("번호 : %d\n", foundArticle.num);
+					System.out.printf("제목 : %s\n", foundArticle.title);
+					System.out.printf("내용 : %s\n", foundArticle.body);
+					
+				}
+		 else{ 
+			System.out.println("존재하지 않는 명령어 입니다.");
 		}
+	}
+		
 
 		sc.close();
 
